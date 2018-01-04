@@ -13,19 +13,17 @@ You will build a customer service bot for Facebook that runs on AWS Lambda and A
 
 ![Architecture Overview](Images/architecture-overview.png)
 
-### Sections
-Each of the sections in this workshop build the necessary components for the Customer Service Chatbot.
 
-## Pre-Work
+
+### Pre-Work
 1\.  If you don't have an AWS account, create one. https://aws.amazon.com/resources/create-account/
 If you do not have an IAM account setup, create one. https://aws.amazon.com/iam/  
 
 2\.  Create your own Slack workspace. 
 https://get.slack.help/hc/en-us/articles/206845317-Create-a-Slack-workspace  
 
-
-
-
+### Sections
+Each of the sections in this workshop build the necessary components for the Customer Service Chatbot.
 
 * **Section 1: Facebook Page Integration**  
 
