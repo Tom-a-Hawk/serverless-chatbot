@@ -78,7 +78,7 @@ _Note: This transformation is part of the AWS Serverless Application Model to ma
 
 ![CloudFormation Creating](Images/cloudformation-creating.png)
 
-8\. This step is recommended, but option. Navigate to your AWS console (click on Services) and navigate to the **Lambda** option located in the compute section. You will see that a few different lambdas have already been created for you. We won't be messing around with most of these until later. Select the chatbot-KnowledgeBase lambda. Scroll down until you see the code for loader.js  Change the answers to be more realistic. When you have finished updating the answers, click the **Save** button in the top right hand corner. 
+8\. This step is recommended, but optional. Navigate to your AWS console (click on Services) and navigate to the **Lambda** option located in the compute section. You will see that a few different lambdas have already been created for you. We won't be messing around with most of these until later. Select the chatbot-KnowledgeBase lambda. Scroll down until you see the code for loader.js  Change the answers to be more realistic. When you have finished updating the answers, click the **Save** button in the top right hand corner. 
 
 You can now proceed to setup your Elasticsearch cluster as specified below without waiting for the stack creation to finish. Just make sure that the stack has been successfully launched before proceeding to the later Section 1.
 
