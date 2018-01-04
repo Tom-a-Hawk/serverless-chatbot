@@ -164,7 +164,7 @@ _Note: To find your API Gateway stage URL, go to the **AWS Management Console**,
 
 ![Facebook Webhook Parameters](Images/fb-webhook-parameters.png)
 
-10\. We also need to subscribe this webhook to subscribe to incoming messages. Hence scroll down and search for **messages** and click on **Subscribe**
+10\. We also need to subscribe this webhook to subscribe to incoming messages. Hence scroll down and search for **messages** and click on **Subscribe** ... if there is a newer version (v2.11, v2.12, etc.), just chose the latest and greatest. 
 
 ![Facebook Subscribe Messages](Images/fb-subscribe-messages.png)
 
@@ -218,7 +218,7 @@ If you aren't familiar with Slack, they offer a free chat communications service
 
 ![Overview of Slack Integration](Images/section-2-overview.png)
 
-1\. Go to [http://www.slack.com](http://www.slack.com) and create a username, as well as a team.
+1\. Go to [http://www.slack.com](http://www.slack.com) and sign into the workspace you created for this project. 
 
 2\. Once logged into Slack, navigate to [https://api.slack.com/apps](https://api.slack.com/apps) and click **Create New App** on the top right corner of the page.
 
@@ -260,9 +260,11 @@ If you aren't familiar with Slack, they offer a free chat communications service
 
 17\. We should now be redirected to the channel we installed this app, and it should provide us with a message that our WildRydes chatbot integration has been added to the channel.
 
-18\. For simplicity of this workshop code, we have not created a functionality to associate a Facebook page with a specific Slack channel. As such we need to tell our AWS Lambda function what "default" channel we should post to. As part of enabling this Slack app, Slack has send our AWS Lambda function a few information about the channel it has enabled, which the function has stored in a DynamoDB table. Open another tab and navigate to your **AWS Management Console** and select **Amazon DynamoDB**. Navigate to the **Tables** and select the **slack-app-channels** table. In the right tab, click on **Items**. This will list all the channel information in which our Slack app has been installed, including their secret Configuration and Incoming Webhook URL. Anyone who has this URL, could post information to your Slack Channel, so it's important to not share this URL outside our DynamoDB table. Select and copy the **channel_id** of the channel in which you've just enabled the Slack App. (It's a short alphanumerical string that looks like this `C1LQ4MAEP`)
+18\. For simplicity of this workshop code, we have not created a functionality to associate a Facebook page with a specific Slack channel. As such we need to tell our AWS Lambda function what "default" channel we should post to. You need to find the channel ID for whatever channel in which you've just enabled the Slack App. (It's a short alphanumerical string that looks like this `C1LQ4MAEP`). The easiest way to find this is to use the developer tools (press F12 in Firefox) in whatever browser you are using. Search the html for the slack channel_id
 
-19\. Navigate to your **AWS Management Console** and select your **AWS Lambda** service. Select the **chatbot-SlackApp-\<Random ID\>** function. Scroll down to see the **Environment variables**. Now go ahead and fill in the `SLACK_CHANNEL_ID` with the **channel_id** you copied earlier from your DynamoDB table. Lastly we also need to tell our Slack Lambda function, which Facebook page to operate on. Change the `FACEBOOK_PAGE_ID` to your Facebook page ID. Now hit the **Save** button.
+Please note, you need to be signed in to you slack workspace in the browser to  ... not the Slack desktop application.  
+
+19\. Navigate to your **AWS Management Console** and select your **AWS Lambda** service. Select the **chatbot-SlackApp-\<Random ID\>** function. Scroll down to see the **Environment variables**. Now go ahead and fill in the `SLACK_CHANNEL_ID` with the **channel_id** you found in the last step. Lastly we also need to tell our Slack Lambda function, which Facebook page to operate on. Change the `FACEBOOK_PAGE_ID` to your Facebook page ID. Now hit the **Save** button.
 
 _If you don't have the Facebook page ID handy, navigate to your Facebook page, click on **About** and scroll down to the bottom to see Facebook Page ID_
 
